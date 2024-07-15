@@ -1,0 +1,84 @@
+<mat-tab-group class="container-tabs" dynamicHeight>
+
+    <mat-tab label="Dragon Ball">
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">star</mat-icon>
+            <label for="db">Dragon Ball</label>
+        </ng-template>
+
+        <div class="container-card">
+            @for (character of characters; track character.id ) {
+            <div class="card">
+                <h2>{{ character.name }}</h2>
+                <img class="image" [src]="character.image" alt="{{ character.name }}">
+                <p>Género: {{ character.genre }}</p>
+                <p>Planeta: {{ character.planet }}</p>
+                <p>Raza: {{ character.race }}</p>
+                <button (click)="showDescription(character)" class="dragon-ball-button" title="Ver Detalle">
+                    <span class="stars">
+                        <span class="star">★</span>
+                    </span>
+                </button>
+            </div>
+            } @empty {
+            <div class="nodata">
+                <label for="nodata">Sin personajes.</label>
+            </div>
+            }
+
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Dragon Ball Z">
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">star</mat-icon>
+            <label for="dbz">Dragon Ball Z</label>
+        </ng-template>
+        <div class="container-card">
+            @for (character of charactersZ; track character.id ) {
+            <div class="card">
+                <img class="image" [src]="character.image" alt="{{ character.name }}">
+                <h2>{{ character.name }}</h2>
+                <p>Género: {{ character.genre }}</p>
+                <p>Planeta: {{ character.planet }}</p>
+                <p>Raza: {{ character.race }}</p>
+                <button (click)="showDescription(character)" class="dragon-ball-button" title="Ver Detalle">
+                    <span class="stars">
+                        <span class="star">★</span>
+                    </span>
+                </button>
+            </div>
+            } @empty {
+            <div class="nodata">
+                <label for="nodata">Sin personajes.</label>
+            </div>
+            }
+
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Dragon Ball GT">
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">star</mat-icon>
+            <label for="db">Dragon Ball GT</label>
+        </ng-template>
+
+        <div class="container-card">
+            <div class="nodata">
+                <label for="nodata">Proximamente Personajes de Dragon Ball GT</label>
+            </div>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Dragon Ball Super">
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">star</mat-icon>
+            <label for="db">Dragon Ball Super</label>
+        </ng-template>
+        <div class="container-card">
+            <div class="nodata">
+                <label for="nodata">Proximamente Personajes de Dragon Ball Super</label>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

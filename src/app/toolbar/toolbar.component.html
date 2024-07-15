@@ -1,0 +1,19 @@
+<div class="toolbar">
+  <div class="toolbar-logo">      
+    <a [routerLink]="['/']">
+      <header class="brand-name">
+        <img class="brand-logo" src="shenrong.png" alt="Logo Dragon Ball" aria-hidden="true"/>
+        <label for="title">Dragon Ball Wild</label>
+      </header>
+    </a>
+  </div>
+  <div class="hamburger-menu" (click)="toggleMenu()">
+    &#9776;
+  </div>
+  <div class="toolbar-links" [ngClass]="{'open': menuOpen}">
+    <a [routerLink]="['/characters']" routerLinkActive="active" (click)="closeMenu()">Personajes</a>
+    <a [routerLink]="['/batallas']" routerLinkActive="active" (click)="closeMenu()">Batallas</a>
+    <a [routerLink]="['/lugares']" routerLinkActive="active" (click)="closeMenu()">Lugares</a>
+    <a [routerLink]="['/dragones']" routerLinkActive="active" (click)="closeMenu()">Dragones</a>
+  </div>
+</div>

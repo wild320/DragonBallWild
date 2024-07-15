@@ -1,0 +1,91 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #9ACD32;
+  color: #FFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 0.5rem 1rem;
+  overflow: hidden;
+}
+
+.toolbar-logo a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.brand-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.toolbar-logo img {
+  height: 40px;
+}
+
+.toolbar-links a {
+  color: #FFF;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.toolbar-links a:hover {
+  background-color: #32CD32;
+  border-radius: 6px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar-links a.active {
+  background-color: #008000;
+  border-radius: 6px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el menú hamburguesa */
+.hamburger-menu {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .toolbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #9ACD32;
+    z-index: 1000;
+  }
+  
+  .toolbar-links.open {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .toolbar-links a {
+    margin: 0 0.5rem;
+    padding: 15px;
+    border-top: 1px solid #FFF;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
