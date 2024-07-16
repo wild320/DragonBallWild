@@ -9,7 +9,7 @@
         <div class="container-card">
             @for (character of characters; track character.id ) {
             <div class="card">
-                <h2>{{ character.name }}</h2>
+                <h4>{{ character.name }}</h4>
                 <img class="image" [src]="character.image" alt="{{ character.name }}">
                 <p>Género: {{ character.genre }}</p>
                 <p>Planeta: {{ character.planet }}</p>
@@ -37,8 +37,8 @@
         <div class="container-card">
             @for (character of charactersZ; track character.id ) {
             <div class="card">
+                <h4>{{ character.name }}</h4>
                 <img class="image" [src]="character.image" alt="{{ character.name }}">
-                <h2>{{ character.name }}</h2>
                 <p>Género: {{ character.genre }}</p>
                 <p>Planeta: {{ character.planet }}</p>
                 <p>Raza: {{ character.race }}</p>

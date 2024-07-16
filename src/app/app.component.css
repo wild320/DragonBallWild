@@ -1,0 +1,14 @@
+app-toolbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+  }
+  
+  router-outlet {
+    margin-top: 75px; 
+    flex: 1;
+    overflow-y: auto;
+    display: block;
+  }
