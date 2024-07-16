@@ -6,8 +6,7 @@
   background-color: #9ACD32;
   color: #FFF;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  font-family: 'Roboto', sans-serif;
+  border-radius: 1rem;  
   margin: 0.5rem 1rem;
   overflow: hidden;
 }
@@ -21,8 +20,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: white;
-  font-family: 'Roboto', sans-serif;
+  color: white;  
 }
 
 .toolbar-logo img {
