@@ -1,0 +1,7 @@
+<mat-form-field appearance="outline">
+    <mat-label>Buscar</mat-label>
+    <input matInput #inputField (keyup)="applyFilter($event)" placeholder="Filtrar Personajes">
+    @if(inputField.value){
+    <mat-icon matSuffix (click)="clear(inputField)">close</mat-icon>
+    }
+</mat-form-field>

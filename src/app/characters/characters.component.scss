@@ -26,6 +26,10 @@ $color-image-shadow: rgb(255, 255, 255);
     }
 }
 
+app-filter-cards {
+    width: 100%;
+}
+
 mat-icon {
     color: $color-orange-red;
     background: radial-gradient(circle, $color-gradient-start 0%, $color-gradient-end 100%);

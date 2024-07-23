@@ -1,4 +1,4 @@
-<mat-tab-group class="container-tabs" dynamicHeight>
+<mat-tab-group  (selectedTabChange)="onTabChange($event)"  class="container-tabs" dynamicHeight>
 
     <mat-tab label="Dragon Ball">
         <ng-template mat-tab-label>
@@ -7,7 +7,10 @@
         </ng-template>
 
         <div class="container-card">
-            @for (character of characters; track character.id ) {
+
+            <app-filter-cards (filterChanged)="onFilterChanged($event)"></app-filter-cards>
+
+            @for (character of filteredCharacters; track character.id ) {
             <div class="card">
                 <h4>{{ character.name }}</h4>
                 <img class="image" [src]="character.image" alt="{{ character.name }}">
@@ -35,7 +38,10 @@
             <label for="dbz">Dragon Ball Z</label>
         </ng-template>
         <div class="container-card">
-            @for (character of charactersZ; track character.id ) {
+            
+            <app-filter-cards (filterChanged)="onFilterChanged($event)"></app-filter-cards>
+
+            @for (character of filteredCharacters; track character.id ) {
             <div class="card">
                 <h4>{{ character.name }}</h4>
                 <img class="image" [src]="character.image" alt="{{ character.name }}">
