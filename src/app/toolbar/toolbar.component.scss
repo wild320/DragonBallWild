@@ -1,14 +1,12 @@
+@import '../variables.scss';
+
 .toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #9ACD32;
-  color: #FFF;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;  
-  margin: 0.5rem 1rem;
   overflow: hidden;
+  padding: 0 1.5rem;
+  border-bottom: 4px solid transparent;
 }
 
 .toolbar-logo a {
@@ -20,37 +18,36 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: white;  
+  color: $naranja-saiyajin-second;
 }
 
 .toolbar-logo img {
   height: 40px;
 }
 
-.toolbar-links a {
-  color: #FFF;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  cursor: pointer;
-  padding: 10px;
+.toolbar-links {
+  display: flex;
+  gap: 2rem;
+  a {
+    color: $negro-intenso;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 4px solid transparent; /* Añadir un borde transparente inicialmente */
+  }
 }
 
-.toolbar-links a:hover {
-  background-color: #32CD32;
-  border-radius: 6px;
-  padding: 10px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.toolbar-links a:hover{
+  border-bottom-color: $naranja-saiyajin-second;
+  transition: border-bottom-color 0.3s ease;
 }
 
 .toolbar-links a.active {
-  background-color: #008000;
-  border-radius: 6px;
-  padding: 10px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: $naranja-saiyajin-second;
+  transition: border-bottom-color 0.3s ease;
 }
 
 /* Estilos para el menú hamburguesa */
@@ -65,13 +62,12 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 40px;
     left: 10px;
     right: 10px;
-    background-color: #9ACD32;
+    background-color: white;
     z-index: 1000;
-    padding-top: 5px;
-    border-radius: 1rem;
+    padding-top: 1rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
@@ -83,7 +79,7 @@
 
   .toolbar-links a {
     margin: 0 0.5rem;
-    padding: 15px;    
+    padding: 15px;
     border-top: 1px solid #FFF;
   }
 

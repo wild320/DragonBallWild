@@ -1,7 +1,6 @@
 <div class="toolbar">
-  <div class="toolbar-logo">      
-    <a [routerLink]="['/']" (click)="closeMenu()">
-      <header class="brand-name">
+  <div class="toolbar-logo">
+    <a [routerLink]="['/']"> <header class="brand-name">
         <img class="brand-logo" src="shenrong.png" alt="Logo Dragon Ball" aria-hidden="true"/>
         <label for="title">Dragon Ball Wild</label>
       </header>
@@ -11,6 +10,7 @@
     &#9776;
   </div>
   <div class="toolbar-links" [ngClass]="{'open': menuOpen}">
+    <a [routerLink]="['/welcome']" routerLinkActive="active" (click)="closeMenu()">Home</a>
     <a [routerLink]="['/characters']" routerLinkActive="active" (click)="closeMenu()">Personajes</a>
     <a [routerLink]="['/batallas']" routerLinkActive="active" (click)="closeMenu()">Batallas</a>
     <a [routerLink]="['/lugares']" routerLinkActive="active" (click)="closeMenu()">Lugares</a>

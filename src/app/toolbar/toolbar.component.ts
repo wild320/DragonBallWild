@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './toolbar.component.html',
-  styleUrl: './toolbar.component.css',
+  styleUrl: './toolbar.component.scss',
 })
 export class ToolbarComponent {
   menuOpen = false;
