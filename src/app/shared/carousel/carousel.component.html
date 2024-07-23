@@ -1,0 +1,24 @@
+<div class="carousel-container">
+    <div class="carousel-inner" [ngStyle]="{'transform': 'translateX(-' + activeSlideIndex * 100 + '%)'}">
+      <ng-container *ngFor="let slide of slides">
+        <div class="carousel-slide">
+          <img src="{{ slide.imageUrl }}" alt="{{ slide.imageAlt }}">
+        </div>
+      </ng-container>
+    </div>
+  
+    <div class="carousel-control">
+      <span class="carousel-control-prev" (click)="prev()"></span>
+      <span class="carousel-control-next" (click)="next()"></span>
+    </div>
+    
+    <div class="container-carousel-indicators">
+      <div class="carousel-indicators">
+        <ng-container *ngFor="let slide of slides; let i = index">
+          <span class="carousel-indicator" (click)="selectSlide(i)">
+          </span>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  
