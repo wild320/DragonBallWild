@@ -1,35 +1,27 @@
-<!-- home.component.html -->
-<div class="container">
+<div class="home-container">
     <app-carousel></app-carousel>
-    <header>
-        <h1>Bienvenido a la App de Personajes de Dragon Ball</h1>
-        <p>Explora el universo de Dragon Ball, conoce a tus personajes favoritos y más.</p>
-    </header>
+    <div class="hero-section">
+        <h1>Explora el Universo<br><span class="highlight">Dragon Ball</span></h1>
+        <p class="subtitle">Conéctate a la base de datos de guerreros más grande y demuestra tu poder.</p>
+    </div>
 
-    <section>
-        <h2>Sobre la Aplicación</h2>
-        <p>Esta aplicación te permite explorar información detallada sobre los personajes del universo de Dragon Ball.</p>
-        <p>Puedes:</p>
-        <ul>
-            <li>Buscar y visualizar detalles de cada personaje.</li>
-            <li>Guardar tus personajes favoritos.</li>
-            <li>Simular batallas entre personajes.</li>
-            <!-- Otros aspectos de la app -->
-        </ul>
-    </section>
+    <div class="features-grid">
+        <section class="feature-card">
+            <h2>Enciclopedia Completa</h2>
+            <p>Visualiza detalles de cada personaje extraídos directamente de la API Oficial.</p>
+            <ul>
+                <li>Razas y Planetas de origen</li>
+                <li>Niveles de poder exactos</li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Funcionalidades</h2>
-        <p>Descubre las características y habilidades únicas de cada personaje.</p>
-        <!-- Detalles adicionales de funcionalidades -->
-    </section>
-
-    <section>
-        <h2>Guarda tus Favoritos</h2>
-        <p>Marca tus personajes favoritos y accede fácilmente a ellos.</p>
-        <!-- Detalles adicionales sobre favoritos -->
-    </section>
-
-    <!-- Otras secciones sobre batallas, etc. -->
-
+        <section class="feature-card">
+            <h2>Arena de Batalla</h2>
+            <p>Pon a prueba tus guerreros Z en nuestro juego de cartas interactivo.</p>
+            <ul>
+                <li>Compara KI máximos</li>
+                <li>Desata combates letales</li>
+            </ul>
+        </section>
+    </div>
 </div>
