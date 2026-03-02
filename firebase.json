@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/dragon-ball-wild/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
