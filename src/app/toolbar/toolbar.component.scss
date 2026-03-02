@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: $naranja-saiyajin-second;
+  color: $tono-tierra-3;
 }
 
 .toolbar-logo img {
@@ -29,25 +29,29 @@
   display: flex;
   gap: 2rem;
   a {
-    color: $negro-intenso;
+    color: $color-texto-principal;
+    text-shadow: 0 0 5px $color-primary;
+    text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
     padding: 10px;
     box-sizing: border-box;
-    border-bottom: 4px solid transparent; /* Añadir un borde transparente inicialmente */
+    border-bottom: 4px solid transparent; 
   }
 }
 
 .toolbar-links a:hover{
-  border-bottom-color: $naranja-saiyajin-second;
-  transition: border-bottom-color 0.3s ease;
+  border-bottom-color: $color-primary;
+  color: $color-blanco;
+  text-shadow: 0 0 10px $color-accent-1;
 }
 
 .toolbar-links a.active {
-  color: $naranja-saiyajin-second;
-  transition: border-bottom-color 0.3s ease;
+  color: $color-accent-1;
+  border-bottom-color: $color-accent-1;
+  text-shadow: 0 0 10px $color-accent-1;
 }
 
 /* Estilos para el menú hamburguesa */
@@ -55,6 +59,7 @@
   display: none;
   font-size: 30px;
   cursor: pointer;
+  color: $color-blanco;
 }
 
 @media (max-width: 768px) {
@@ -65,11 +70,14 @@
     top: 40px;
     left: 10px;
     right: 10px;
-    background-color: white;
+    background-color: $color-bg-surface;
+    border: 2px solid $color-primary;
+    border-radius: 8px;
     z-index: 1000;
     padding-top: 1rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    box-shadow: 0 4px 15px rgba(213, 0, 255, 0.4);
   }
 
   .toolbar-links.open {
@@ -80,7 +88,7 @@
   .toolbar-links a {
     margin: 0 0.5rem;
     padding: 15px;
-    border-top: 1px solid #FFF;
+    border-top: 1px solid rgba(213, 0, 255, 0.3);
   }
 
   .hamburger-menu {

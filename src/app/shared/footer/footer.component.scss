@@ -1,0 +1,86 @@
+@import '../../variables.scss';
+
+.footer {
+    background: linear-gradient(to top, #110b17, rgba(31, 21, 42, 0.6));
+    border-top: 1px solid rgba(155, 77, 202, 0.2);
+    padding: 2.5rem 1.5rem;
+    margin-top: 4rem;
+    backdrop-filter: blur(5px);
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brand {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: $color-blanco;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 0px;
+        
+        span {
+            color: $color-primary;
+            text-shadow: 0 0 10px rgba(155, 77, 202, 0.8);
+        }
+    }
+
+    .right-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        
+        @media (max-width: 768px) {
+            align-items: center;
+        }
+
+        .author {
+            color: $color-texto-secundario;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            font-weight: 300;
+
+            strong {
+                color: $color-dorado;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+        }
+
+        .credits {
+            font-size: 0.95rem;
+            color: $color-texto-secundario;
+            margin: 0;
+
+            a {
+                color: $color-accent-1;
+                text-decoration: none;
+                font-weight: 600;
+                padding: 0.2rem 0.5rem;
+                margin-left: 0.2rem;
+                border-radius: 4px;
+                background: rgba(0, 210, 255, 0.1);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: $color-accent-1;
+                    color: #110b17;
+                    box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+                }
+            }
+        }
+    }
+}
