@@ -1,0 +1,32 @@
+<div class="result-modal" [ngClass]="{'victory': data.isVictory, 'defeat': !data.isVictory && !data.isDraw, 'draw': data.isDraw}">
+    <h2 mat-dialog-title class="modal-title">
+        <ng-container *ngIf="data.isVictory">¡VICTORIA!</ng-container>
+        <ng-container *ngIf="!data.isVictory && !data.isDraw">¡DERROTA!</ng-container>
+        <ng-container *ngIf="data.isDraw">¡EMPATE!</ng-container>
+    </h2>
+    <mat-dialog-content class="modal-content">
+        <!-- Mostrar solo un retrato (ganador) si NO es empate -->
+        <div class="portraits" *ngIf="!data.isDraw">
+            <div class="portrait winner-solo" [ngClass]="{'winner': data.isVictory, 'loser': !data.isVictory}">
+                <img [src]="data.isVictory ? data.playerImage : data.enemyImage" alt="Ganador">
+            </div>
+        </div>
+        
+        <!-- Mostrar ambos retratos en caso de empate -->
+        <div class="portraits tie-layout" *ngIf="data.isDraw">
+            <div class="portrait tie tie-left">
+                <img [src]="data.playerImage" alt="Jugador">
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="portrait tie tie-right">
+                <img [src]="data.enemyImage" alt="Enemigo">
+            </div>
+        </div>
+        
+        <p class="result-message">{{ data.message }}</p>
+    </mat-dialog-content>
+    
+    <mat-dialog-actions align="center">
+      <button class="btn-continue" (click)="close()">Siguiente Combate</button>
+    </mat-dialog-actions>
+</div>

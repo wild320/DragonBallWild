@@ -1,0 +1,51 @@
+<div class="battle-container">
+  <h2>¡Arena de Combate!</h2>
+  
+  <div *ngIf="!playerFighter" class="selection-grid">
+    <h3>Selecciona a tu luchador:</h3>
+    <div class="card-grid">
+      @for(c of characters; track c.id) {
+        <div class="fighter-card" (click)="selectFighter(c)">
+          <div class="image-wrapper">
+            <img [src]="c.image" [alt]="c.name">
+          </div>
+          <h4>{{ c.name }}</h4>
+          <p class="ki-stat">Ki: {{ c.maxKi !== '0' ? c.maxKi : c.ki }}</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div *ngIf="playerFighter && enemyFighter" class="battle-arena">
+    <div class="combatants">
+      <div class="fighter player" [class.fighting]="isFighting">
+        <h3 class="role-title">Tu Luchador</h3>
+        <div class="fighter-card fixed">
+          <div class="image-wrapper">
+             <img [src]="playerFighter.image" [alt]="playerFighter.name">
+          </div>
+          <h4>{{ playerFighter.name }}</h4>
+          <p class="ki-stat">Ki: {{ playerFighter.maxKi !== '0' ? playerFighter.maxKi : playerFighter.ki }}</p>
+        </div>
+      </div>
+
+      <div class="vs-column">
+        <div class="vs" [class.fighting]="isFighting">
+          <h1>VS</h1>
+        </div>
+      </div>
+
+      <div class="fighter enemy" [class.fighting]="isFighting">
+        <h3 class="role-title">Oponente</h3>
+         <div class="fighter-card fixed">
+          <div class="image-wrapper">
+             <img [src]="enemyFighter.image" [alt]="enemyFighter.name">
+          </div>
+          <h4>{{ enemyFighter.name }}</h4>
+           <div class="obfuscated text-magic" *ngIf="isFighting">Calculando Ki...</div>
+          <p class="ki-stat" *ngIf="!isFighting">Ki: {{ enemyFighter.maxKi !== '0' ? enemyFighter.maxKi : enemyFighter.ki }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
