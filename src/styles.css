@@ -1,18 +1,32 @@
-* { margin: 0; padding: 0; }
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
+* { margin: 0; padding: 0; }
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
     min-height: 100dvh;
-    font-size: clam(1.5rem, 8vw - 2rem, 3rem);
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background-color: #1f152a;
+    background-image: radial-gradient(circle at 50% 0%, #3e265c 0%, #1f152a 60%);
+    background-attachment: fixed;
+    color: #f8f6fb;
+    font-size: 16px;
+}
+
+/* Global transparent panel class for modals */
+.dragon-ball-modal .mat-mdc-dialog-surface,
+.dragon-ball-modal .mdc-dialog__surface {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
 }
 
 input, button, textarea, select { font: inherit; }
-
 p { text-wrap: pretty; }
-
 h1, h2, h3, h4, h5, h6 { text-wrap: balance;}
-
 img, video, svg { height: auto; max-width: 100%; }
 
 @media ( prefers-reduced-motion: reduce ) {

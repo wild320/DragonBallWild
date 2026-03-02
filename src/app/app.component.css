@@ -2,13 +2,15 @@ app-toolbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: white;
+    background-color: rgba(11, 3, 22, 0.9);
+    backdrop-filter: blur(10px);
     z-index: 1000;
-  }
+    border-bottom: 2px solid #6A00FF;
+}
   
-  router-outlet {
+router-outlet {
     margin-top: 75px; 
     flex: 1;
     overflow-y: auto;
     display: block;
-  }
+}

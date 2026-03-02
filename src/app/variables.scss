@@ -1,17 +1,30 @@
-// Colores principales
-$naranja-saiyajin: #FF8C3F;
-$naranja-saiyajin-second: #fc6214;
-$azul-ceruleo: #007BFF;
-$verde-esmeralda: #28A745;
+// Colores principales (Premium Purple Theme)
+$color-primary: #9b4dca; // Púrpura elegante y brillante
+$color-secondary: #753a99; // Púrpura profundo para contrastes
+$color-accent-1: #00d2ff; // Cyan energético para acentos
+$color-accent-2: #ff4081; // Rosa vibrante para detalles dinámicos
 
-// Colores secundarios
-$amarillo-dorado: #FFD700;
-$rosa-intenso: #FFC0CB;
-$morado-oscuro: #5856D6;
+// Colores de Fondo
+$color-bg-main: #1f152a; // Fondo principal más claro que el negro, tono berenjena
+$color-bg-surface: #2d1f3d; // Superficies y cartas con un tono más claro para separar del fondo
+$color-border-glow: #b388ff; // Resplandor suave
 
 // Colores adicionales
-$blanco-puro: #FFFFFF;
-$negro-intenso: #000000;
-$tono-tierra-1: #C6A600; 
-$tono-tierra-2: #8B4513; 
-$tono-tierra-3: #F0DC8B; 
+$color-dorado: #ffd54f; // Dorado premium, menos saturado
+$color-blanco: #ffffff;
+$color-texto-principal: #f8f6fb; // Blanco ligeramente violeta
+$color-texto-secundario: #b39ddb; // Morado grisáceo para texto secundario
+
+// Alias para compatibilidad con código antiguo (Legacy)
+$naranja-saiyajin: $color-primary;
+$naranja-saiyajin-second: $color-secondary;
+$azul-ceruleo: $color-bg-surface;
+$verde-esmeralda: $color-bg-surface;
+$amarillo-dorado: $color-dorado;
+$rosa-intenso: $color-accent-2;
+$morado-oscuro: $color-bg-main;
+$blanco-puro: $color-blanco;
+$negro-intenso: $color-bg-main;
+$tono-tierra-1: $color-secondary;
+$tono-tierra-2: $color-bg-surface;
+$tono-tierra-3: $color-texto-principal;
