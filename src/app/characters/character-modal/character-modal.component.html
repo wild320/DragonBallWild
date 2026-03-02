@@ -1,0 +1,45 @@
+<div class="character-modal-container">
+    <div class="modal-header">
+        <h2 mat-dialog-title class="modal-title">{{ data.name }}</h2>
+        <button class="x-close-btn" (click)="close()">✖</button>
+    </div>
+    
+    <mat-dialog-content class="modal-content">
+        <div class="modal-header-info">
+            <div class="image-wrapper">
+                <img [src]="data.image" [alt]="data.name" class="modal-image">
+            </div>
+            <div class="modal-stats">
+                <div class="stat-badge">
+                    <span class="label">Ki Base</span>
+                    <span class="value">{{ data.ki }}</span>
+                </div>
+                <div class="stat-badge max-ki">
+                    <span class="label">Ki Máx</span>
+                    <span class="value">{{ data.maxKi }}</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="label">Raza</span>
+                    <span class="value">{{ data.race }}</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="label">Afiliación</span>
+                    <span class="value">{{ data.affiliation }}</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="label">Género</span>
+                    <span class="value">{{ data.gender }}</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-description">
+            <h3>Historia y Detalles</h3>
+            <p>{{ data.description }}</p>
+        </div>
+    </mat-dialog-content>
+    
+    <mat-dialog-actions align="center">
+      <button class="btn-continue" (click)="close()">Cerrar</button>
+    </mat-dialog-actions>
+</div>

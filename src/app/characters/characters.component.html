@@ -1,90 +1,40 @@
-<mat-tab-group  (selectedTabChange)="onTabChange($event)"  class="container-tabs" dynamicHeight>
+<div class="container-tabs">
+    <div class="container-card">
 
-    <mat-tab label="Dragon Ball">
-        <ng-template mat-tab-label>
-            <mat-icon >star</mat-icon>
-            <label for="db">Dragon Ball</label>
-        </ng-template>
+        <app-filter-cards (filterChanged)="onFilterChanged($event)"></app-filter-cards>
 
-        <div class="container-card">
-
-            <app-filter-cards (filterChanged)="onFilterChanged($event)"></app-filter-cards>
-
-            @for (character of filteredCharacters; track character.id ) {
-            <div class="card">
+        @for (character of filteredCharacters; track character.id ) {
+        <div class="card-wrapper" [class.flipped]="flippedCards.has(character.id)" (click)="toggleFlip(character.id, $event)">
+            <div class="card card-front">
                 <h4>{{ character.name }}</h4>
-                <img class="image" [src]="character.image" alt="{{ character.name }}">
-                <p>Género: {{ character.genre }}</p>
-                <p>Planeta: {{ character.planet }}</p>
-                <p>Raza: {{ character.race }}</p>
-                <button (click)="showDescription(character)" class="dragon-ball-button" title="Ver Detalle">
-                    <span class="stars">
-                        <span class="star">★</span>
-                    </span>
-                </button>
+                <div class="image-container">
+                    <img class="image" [src]="character.image" alt="{{ character.name }}">
+                </div>
+                <div class="stats">
+                    <p><strong>Ki:</strong> <span>{{ character.ki }}</span></p>
+                    <p><strong>Raza:</strong> <span>{{ character.race }}</span></p>
+                    <p><strong>Filiación:</strong> <span>{{ character.affiliation }}</span></p>
+                </div>
             </div>
-            } @empty {
-            <div class="nodata">
-                <label for="nodata">Sin personajes.</label>
-            </div>
-            }
-
-        </div>
-    </mat-tab>
-
-    <mat-tab label="Dragon Ball Z">
-        <ng-template mat-tab-label>
-            <mat-icon >star</mat-icon>
-            <label for="dbz">Dragon Ball Z</label>
-        </ng-template>
-        <div class="container-card">
             
-            <app-filter-cards (filterChanged)="onFilterChanged($event)"></app-filter-cards>
-
-            @for (character of filteredCharacters; track character.id ) {
-            <div class="card">
+            <div class="card card-back">
                 <h4>{{ character.name }}</h4>
-                <img class="image" [src]="character.image" alt="{{ character.name }}">
-                <p>Género: {{ character.genre }}</p>
-                <p>Planeta: {{ character.planet }}</p>
-                <p>Raza: {{ character.race }}</p>
-                <button (click)="showDescription(character)" class="dragon-ball-button" title="Ver Detalle">
-                    <span class="stars">
-                        <span class="star">★</span>
-                    </span>
+                <div class="description-preview">
+                    {{ character.description ? (character.description | slice:0:120) + '...' : 'Sin descripción' }}
+                </div>
+                <button (click)="showDescription(character, $event)" class="btn-more" title="Ver Detalle">
+                    Ver Más
                 </button>
             </div>
-            } @empty {
-            <div class="nodata">
-                <label for="nodata">Sin personajes.</label>
-            </div>
-            }
-
         </div>
-    </mat-tab>
-
-    <mat-tab label="Dragon Ball GT">
-        <ng-template mat-tab-label>
-            <mat-icon >star</mat-icon>
-            <label for="db">Dragon Ball GT</label>
-        </ng-template>
-
-        <div class="container-card">
-            <div class="nodata">
-                <label for="nodata">Proximamente Personajes de Dragon Ball GT</label>
-            </div>
+        } @empty {
+        <div class="nodata">
+            <label>Cargando personajes o sin resultados.</label>
         </div>
-    </mat-tab>
+        }
 
-    <mat-tab label="Dragon Ball Super">
-        <ng-template mat-tab-label>
-            <mat-icon >star</mat-icon>
-            <label for="db">Dragon Ball Super</label>
-        </ng-template>
-        <div class="container-card">
-            <div class="nodata">
-                <label for="nodata">Proximamente Personajes de Dragon Ball Super</label>
-            </div>
-        </div>
-    </mat-tab>
-</mat-tab-group>
+    </div>
+    <div *ngIf="isLoading" class="loading-more">
+        <p>Cargando más personajes...</p>
+    </div>
+</div>
