@@ -48,7 +48,7 @@ Sigue estos pasos para arrancar el entorno en tu máquina:
 1. Clona el repositorio a tu máquina local:
 
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/wild320/DragonBallWild.git
    ```
 
 2. Ingresa a la carpeta del proyecto e instala sus dependencias con NPM:
