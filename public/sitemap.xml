@@ -1,0 +1,24 @@
+<?xml version="1.xml" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Inicio -->
+  <url>
+    <loc>https://dragon-ball-wild-a5c0a.web.app/welcome</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Personajes -->
+  <url>
+    <loc>https://dragon-ball-wild-a5c0a.web.app/characters</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Batallas -->
+  <url>
+    <loc>https://dragon-ball-wild-a5c0a.web.app/batallas</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>

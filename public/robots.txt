@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*?*
+
+Sitemap: https://dragon-ball-wild-a5c0a.web.app/sitemap.xml
